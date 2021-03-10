@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">food</string>
+    <string name="welcome_m">Please insert the following food items into their proper areas to find out which recipe you can make.</string>
+    <string name="season_m">Select the seasonings you would like to use</string>
+    <string name="protein_m">Select the protein you would like to use</string>
+    <string name="side_m">Select the side you would like to use</string>
+    <string-array name="seasons">
+        <item>none</item>
+        <item>salt</item>
+        <item>salt, black pepper</item>
+        <item>salt, black pepper, garlic powder</item>
+        <item>salt, black pepper, garlic powder, onion powder</item>
+        <item>salt, black pepper, garlic powder, onion powder, chili powder</item>
+        <item>salt, garlic powder</item>
+        <item>salt, garlic powder, onion powder</item>
+        <item>salt, garlic powder, onion powder, chili powder</item>
+    </string-array>
+    <string-array name="proteins">
+        <item>none</item>
+        <item>chicken</item>
+        <item>steak</item>
+        <item>ground meat</item>
+        <item>fish</item>
+    </string-array>
+    <string-array name="sides">
+        <item>none</item>
+        <item>potatoes</item>
+        <item>pasta</item>
+    </string-array>
+</resources>
