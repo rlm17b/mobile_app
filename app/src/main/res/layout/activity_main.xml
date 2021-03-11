@@ -67,6 +67,20 @@
             android:layout_height="47dp"
             android:layout_below="@id/mside"
             android:entries="@array/sides"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="297dp"
+            android:layout_height="117dp"
+            app:srcCompat="@drawable/_29233" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="300dp"
+            android:text="Submit" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
