@@ -26,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
                     String email = eMail.getText().toString();
                     if (valid(email) == true) {
                         Toast.makeText(getApplicationContext(), "Welcome to the Food app", Toast.LENGTH_SHORT).show();
-                        setContentView(R.layout.activity_main);
+                        //setContentView(R.layout.activity_main);
+                        Intent intent = new Intent(getApplicationContext(), FoodSearchActivity.class);
+                        startActivity(intent);
                     } else {
                         Toast.makeText(getApplicationContext(), "This is an invalid email address", Toast.LENGTH_SHORT).show();
                     }
@@ -37,12 +39,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean valid(String emailID){
-        /*if(emailID ==){
+        if(emailID.contains("@gmail.com")){
             return true;
         }
         else{
             return false;
-        }*/
-        return true;
+        }
     }
 }

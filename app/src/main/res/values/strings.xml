@@ -19,7 +19,7 @@
         <item>none</item>
         <item>chicken</item>
         <item>steak</item>
-        <item>ground meat</item>
+        <item>ground beef</item>
         <item>fish</item>
     </string-array>
     <string-array name="sides">
@@ -27,5 +27,5 @@
         <item>potatoes</item>
         <item>pasta</item>
     </string-array>
-    <string name="sign">Please enter E-mail in order to continue to the main screen</string>
+    <string name="sign">Please enter G-mail in order to continue to the main screen</string>
 </resources>
