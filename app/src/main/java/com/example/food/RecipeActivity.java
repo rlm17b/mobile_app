@@ -98,7 +98,7 @@ public class RecipeActivity extends AppCompatActivity {
 
     private void createProfileDialog(){
         Intent intent = new Intent(getApplicationContext(), UserHomeActivity.class);
-      //  startActivity(intent);
+        startActivity(intent);
     }
 
     private void setViews() {
