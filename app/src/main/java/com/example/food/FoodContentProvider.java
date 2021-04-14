@@ -44,7 +44,9 @@ public class FoodContentProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
+        getContext().deleteDatabase(DBNAME);
         mOpenHelper = new MainDatabaseHelper(getContext());
+
 
         return true;
     }
@@ -69,13 +71,13 @@ public class FoodContentProvider extends ContentProvider {
         String name = values.getAsString(COLUMN_NAME).trim();
         String instructions = values.getAsString(COLUMN_INSTRUCTION).trim();
 
-        if (proteins.isEmpty() || seasonings.isEmpty() || name.isEmpty() || sides.isEmpty() || instructions.isEmpty())
+        if (proteins.equals("") || seasonings.equals("") || name.equals("") || sides.equals("") || instructions.equals(""))
             return null;
 
 
         long id = mOpenHelper.getWritableDatabase().insert(TABLE_NAME, null, values);
 
-        return Uri.withAppendedPath(CONTENT_URI, "" + id);
+        return Uri.withAppendedPath(CONTENT_URI, "");
     }
 
     @Override

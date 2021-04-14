@@ -1,5 +1,7 @@
 package com.example.food;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -28,6 +30,8 @@ public class RecipeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_layout);
+
+
 
         Intent intent = getIntent();
         String pro = intent.getStringExtra("protein");
@@ -87,12 +91,12 @@ public class RecipeActivity extends AppCompatActivity {
 
     private void createEmailDialog() {
         //create a fragment and layout file to use this info to send email
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.setData(Uri.parse("mailto:"));
-        emailIntent.setType("text/plain");
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {"Recepient"});
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "subject");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "Message body");
+        EmailFragment e = new EmailFragment();
+        FragmentManager f = getFragmentManager();
+        FragmentTransaction mtrans = f.beginTransaction();
+        mtrans.commit();
+
+
         //allow user to email recipe
     }
 
