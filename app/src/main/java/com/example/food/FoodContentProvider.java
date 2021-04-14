@@ -23,22 +23,22 @@ public class FoodContentProvider extends ContentProvider {
 
 
     public static final String Authority = "com.example.food";
-    public static final Uri CONTENT_URI = Uri.parse("content://com.example.food/" + TABLE_NAME);
+    public static final Uri CONTENT_URI = Uri.parse("content://com.example.food.provider/" + TABLE_NAME);
 
     private static UriMatcher sUriMatcher;
     private MainDatabaseHelper mOpenHelper;
 
     private static final String SQL_CREATE_MAIN = "CREATE TABLE " +
             TABLE_NAME +  // Table's name
-            "(" +               // The columns in the table
+            "(" +            // The columns in the table
             COLUMN_PROTEIN +
-            "TEXT PRIMARY KEY, " +
+            "TEXT, " +
             COLUMN_SEASONING +
             " TEXT," +
             COLUMN_SIDE +
             " TEXT," +
             COLUMN_NAME +
-            " TEXT," +
+            " TEXT PRIMARY KEY," +
             COLUMN_INSTRUCTION +
             " TEXT)";
 

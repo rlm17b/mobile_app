@@ -10,4 +10,13 @@
         android:layout_weight="1"
         android:text="The Recipe With Your Food Items Is:"
         android:textSize="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameTextView"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/instructionsTextView"/>
 </LinearLayout>

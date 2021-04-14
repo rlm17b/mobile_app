@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.food">
 
+    <permission android:name="com.example.mobile_app.permission.READ_PERMISSION" />
+    <permission android:name="com.example.mobile_app.permission.WRITE_PERMISSION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,6 +31,14 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        
+        <provider
+            android:authorities="com.example.food.provider"
+            android:name=".FoodContentProvider"
+            android:exported="true"
+            android:readPermission="com.example.food.permission.READ_PERMISSION"
+            android:writePermission="com.example.food.permission.WRITE_PERMISSION"/>
+            
     </application>
 
 </manifest>

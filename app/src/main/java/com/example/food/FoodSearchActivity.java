@@ -36,8 +36,12 @@ public class FoodSearchActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Missing seasonings", Toast.LENGTH_SHORT).show();
                 }
                 else {
+
                     //need to query table to get name/instructions, and show it on third activity
                     Intent intent = new Intent(getApplicationContext(), RecipeActivity.class);
+                    intent.putExtra("protein", pro);
+                    intent.putExtra("seasoning", sea);
+                    intent.putExtra("side", sid);
                     startActivity(intent);
                 }
             }
