@@ -49,13 +49,18 @@ public class RecipeActivity extends AppCompatActivity {
         };
 
 
-      //  mCursor = getContentResolver().query(FoodContentProvider.CONTENT_URI, mProjection, mSelectionClause, mSelectionArgs, null);;
+        mCursor = getContentResolver().query(FoodContentProvider.CONTENT_URI, mProjection, mSelectionClause, mSelectionArgs, null);;
 
 
         TextView n = (TextView)findViewById(R.id.nameTextView);
         TextView i = (TextView)findViewById(R.id.instructionsTextView);
-        n.setText(mCursor.getString(0));
-        i.setText(mCursor.getString(1));
+
+
+            n.setText("No Recipe");
+            i.setText("Try doing a new search with different food items");
+
+       // n.setText(mCursor.getString(4));
+       // i.setText(mCursor.getString(5));
 
         //get data from db to show recipe name/instructions
     }
@@ -110,8 +115,8 @@ public class RecipeActivity extends AppCompatActivity {
 
     private void createSaveDialog(){
         Intent intent = new Intent(getApplicationContext(), UserHomeActivity.class);
-        intent.putExtra("name", mCursor.getString(0));
-        intent.putExtra("instruct", mCursor.getString(1));
+        //intent.putExtra("name", mCursor.getString(0));
+       // intent.putExtra("instruct", mCursor.getString(1));
         startActivity(intent);
     }
 

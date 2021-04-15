@@ -7,16 +7,22 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:layout_weight="1"
         android:text="The Recipe With Your Food Items Is:"
         android:textSize="30dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/nameTextView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/nameTextView"/>
+        android:textSize="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="-280dp"/>
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginLeft="-400dp"
+        android:textSize="20dp"
+        android:layout_marginTop="200dp"
         android:id="@+id/instructionsTextView"/>
 </LinearLayout>

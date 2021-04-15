@@ -32,7 +32,7 @@ public class FoodContentProvider extends ContentProvider {
             TABLE_NAME +  // Table's name
             "(" +            // The columns in the table
             COLUMN_PROTEIN +
-            "TEXT, " +
+            " TEXT, " +
             COLUMN_SEASONING +
             " TEXT," +
             COLUMN_SIDE +
@@ -40,7 +40,7 @@ public class FoodContentProvider extends ContentProvider {
             COLUMN_NAME +
             " TEXT PRIMARY KEY," +
             COLUMN_INSTRUCTION +
-            " TEXT)";
+            " TEXT " + ")";
 
     @Override
     public boolean onCreate() {

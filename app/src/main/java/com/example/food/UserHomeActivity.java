@@ -27,16 +27,16 @@ public class UserHomeActivity extends AppCompatActivity {
 
         Bundle extras = i.getExtras();
 
-        if(extras.containsKey("name")){
+      /*  if(extras.containsKey("name")){
 
             n.setText(i.getStringExtra("name"));
             in.setText(i.getStringExtra("instruct"));
 
-        }
-        else{
+        } */
+      //  else{
             n.setText("No Current Recipe");
             in.setText("Search for a new recipe");
-        }
+     //   }
 
 
 
