@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,9 @@ public class UserHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.backdrop_layout);
         //home screen after login, implement backdrop
+        TextView g = (TextView)findViewById(R.id.uTextView);
+        Intent i = getIntent();
+        g.setText(i.getStringExtra("user"));
 
         Button b1 = (Button)findViewById(R.id.button1);
         Button b2 = (Button)findViewById(R.id.button2);

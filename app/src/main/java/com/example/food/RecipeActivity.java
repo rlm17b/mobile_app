@@ -21,9 +21,6 @@ public class RecipeActivity extends AppCompatActivity {
 
     Cursor mCursor;
 
-    TextView idTv;
-    TextView nameTv;
-    TextView instructionsTv;
     String[] mProjection;
 
     @Override
@@ -52,10 +49,13 @@ public class RecipeActivity extends AppCompatActivity {
         };
 
 
-        mCursor = getContentResolver().query(FoodContentProvider.CONTENT_URI, mProjection, mSelectionClause, mSelectionArgs, null);;
+      //  mCursor = getContentResolver().query(FoodContentProvider.CONTENT_URI, mProjection, mSelectionClause, mSelectionArgs, null);;
 
 
-
+        TextView n = (TextView)findViewById(R.id.nameTextView);
+        TextView i = (TextView)findViewById(R.id.instructionsTextView);
+        n.setText(mCursor.getString(0));
+        i.setText(mCursor.getString(1));
 
         //get data from db to show recipe name/instructions
     }
@@ -105,9 +105,4 @@ public class RecipeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void setViews() {
-        idTv.setText(mCursor.getString(0));
-        nameTv.setText(mCursor.getString(4));
-        instructionsTv.setText(mCursor.getString(5));
-    }
 }

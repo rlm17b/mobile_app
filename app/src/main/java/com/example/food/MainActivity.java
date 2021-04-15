@@ -9,7 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -128,6 +131,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         EditText eMail = (EditText)findViewById(R.id.email);
+
+
         submit = (Button)findViewById(R.id.enter);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,8 +140,10 @@ public class MainActivity extends AppCompatActivity {
                     String email = eMail.getText().toString();
                     if (valid(email) == true) {
                         Toast.makeText(getApplicationContext(), "Welcome to the Food app", Toast.LENGTH_SHORT).show();
-                        //setContentView(R.layout.activity_main);
-                        Intent intent = new Intent(getApplicationContext(), FoodSearchActivity.class);
+
+
+                        Intent intent = new Intent(getApplicationContext(), UserHomeActivity.class);
+                        intent.putExtra("user", email);
                         startActivity(intent);
                     } else {
                         Toast.makeText(getApplicationContext(), "This is an invalid email address", Toast.LENGTH_SHORT).show();

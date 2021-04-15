@@ -8,16 +8,18 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_anchorGravity="center">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginTop="50dp"
-            android:textSize="30dp"
-            android:text="cool" />
+            android:id="@+id/uTextView"
+            android:textSize="30dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -31,9 +33,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         android:background="@color/purple_200"
-        
+        android:minHeight="56dp"
+
         >
 
         <LinearLayout
@@ -46,7 +49,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Scroll up"/>
+                android:text="Scroll up"
+                android:textSize="30dp"/>
 
         </LinearLayout>
 
@@ -78,7 +82,5 @@
 
     </LinearLayout>
 
-    android:behavior_peekHeight="56dp"
-    android:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

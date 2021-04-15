@@ -19,12 +19,13 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_layout);
+        EditText editText = (EditText) findViewById(R.id.edittext);
 
         Button search = (Button) findViewById(R.id.search);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText editText = (EditText) findViewById(R.id.edittext);
+
                 String name = editText.getText().toString().trim();
 
                 String[] mSelectionArgs = {name};
