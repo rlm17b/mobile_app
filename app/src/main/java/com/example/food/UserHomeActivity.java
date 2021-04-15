@@ -22,6 +22,24 @@ public class UserHomeActivity extends AppCompatActivity {
         Intent i = getIntent();
         g.setText(i.getStringExtra("user"));
 
+        TextView n = (TextView)findViewById(R.id.n1Tv);
+        TextView in = (TextView)findViewById(R.id.inTv);
+
+        Bundle extras = i.getExtras();
+
+        if(extras.containsKey("name")){
+
+            n.setText(i.getStringExtra("name"));
+            in.setText(i.getStringExtra("instruct"));
+
+        }
+        else{
+            n.setText("No Current Recipe");
+            in.setText("Search for a new recipe");
+        }
+
+
+
         Button b1 = (Button)findViewById(R.id.button1);
         Button b2 = (Button)findViewById(R.id.button2);
         Button b3 = (Button)findViewById(R.id.button3);

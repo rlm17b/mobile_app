@@ -6,4 +6,6 @@
         android:title="New Recipe Search"></item>
     <item android:id="@+id/Profile"
         android:title="Profile"></item>
+    <item android:id="@+id/Save"
+        android:title="Save Current Recipe"></item>
 </menu>

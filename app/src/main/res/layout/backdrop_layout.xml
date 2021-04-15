@@ -26,6 +26,19 @@
             android:layout_height="wrap_content"
             android:text="Current Recipe: " />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:id="@+id/n1Tv"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="100dp"
+            android:textSize="20dp"
+            android:id="@+id/inTv"/>
+
 
     </LinearLayout>
 

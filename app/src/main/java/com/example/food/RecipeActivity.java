@@ -79,6 +79,9 @@ public class RecipeActivity extends AppCompatActivity {
             case R.id.Profile:
                 createProfileDialog();
                 break;
+            case R.id.Save:
+                createSaveDialog();
+                break;
 
         }
         return true;
@@ -102,6 +105,13 @@ public class RecipeActivity extends AppCompatActivity {
 
     private void createProfileDialog(){
         Intent intent = new Intent(getApplicationContext(), UserHomeActivity.class);
+        startActivity(intent);
+    }
+
+    private void createSaveDialog(){
+        Intent intent = new Intent(getApplicationContext(), UserHomeActivity.class);
+        intent.putExtra("name", mCursor.getString(0));
+        intent.putExtra("instruct", mCursor.getString(1));
         startActivity(intent);
     }
 
