@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +18,7 @@ public class UserHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.backdrop_layout);
         //home screen after login, implement backdrop
+
         TextView g = (TextView)findViewById(R.id.uTextView);
         Intent i = getIntent();
         g.setText(i.getStringExtra("user"));
@@ -42,6 +44,8 @@ public class UserHomeActivity extends AppCompatActivity {
         Button b1 = (Button)findViewById(R.id.button1);
         Button b2 = (Button)findViewById(R.id.button2);
         Button b3 = (Button)findViewById(R.id.button3);
+
+        Toast.makeText(getApplicationContext(), "The backdrop may take more than one try to respond. It does not scroll back down", Toast.LENGTH_LONG).show();
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
