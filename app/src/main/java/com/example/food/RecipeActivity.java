@@ -2,20 +2,17 @@ package com.example.food;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import org.w3c.dom.Text;
 
 public class RecipeActivity extends AppCompatActivity {
 
@@ -99,10 +96,23 @@ public class RecipeActivity extends AppCompatActivity {
 
     private void createEmailDialog() {
         //create a fragment and layout file to use this info to send email
-        EmailFragment e = new EmailFragment();
+       /* EmailActivity e = new EmailActivity();
         FragmentManager f = getFragmentManager();
         FragmentTransaction mtrans = f.beginTransaction();
-        mtrans.commit();
+        mtrans.commit(); */
+
+        String[] TO = {""};
+        String[] CC = {""};
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+        emailIntent.putExtra(Intent.EXTRA_CC, CC);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Your subject");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Email message goes here");
+        startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+        finish();
 
 
         //allow user to email recipe
@@ -115,8 +125,15 @@ public class RecipeActivity extends AppCompatActivity {
 
     private void createSaveDialog(){
         Intent intent = new Intent(getApplicationContext(), UserHomeActivity.class);
-        //intent.putExtra("name", mCursor.getString(0));
-       // intent.putExtra("instruct", mCursor.getString(1));
+      /*  if(mCursor.getString(0) != null) {
+            intent.putExtra("name", mCursor.getString(0));
+            intent.putExtra("instruct", mCursor.getString(1));
+            startActivity(intent);
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "There is no recipe to be saved, pick a  different option.", Toast.LENGTH_LONG).show();
+        }*/
+        Toast.makeText(getApplicationContext(), "There is no recipe to be saved", Toast.LENGTH_LONG).show();
         startActivity(intent);
     }
 

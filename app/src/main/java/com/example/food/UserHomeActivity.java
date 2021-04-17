@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class UserHomeActivity extends AppCompatActivity {
@@ -25,18 +24,18 @@ public class UserHomeActivity extends AppCompatActivity {
         TextView n = (TextView)findViewById(R.id.n1Tv);
         TextView in = (TextView)findViewById(R.id.inTv);
 
-        Bundle extras = i.getExtras();
 
-      /*  if(extras.containsKey("name")){
+        if(i.getStringExtra("name") == null){
 
-            n.setText(i.getStringExtra("name"));
-            in.setText(i.getStringExtra("instruct"));
-
-        } */
-      //  else{
             n.setText("No Current Recipe");
             in.setText("Search for a new recipe");
-     //   }
+
+
+        }
+        else{
+            n.setText(i.getStringExtra("name"));
+            in.setText(i.getStringExtra("instruct"));
+        }
 
 
 
@@ -64,10 +63,18 @@ public class UserHomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                EmailFragment e = new EmailFragment();
-                FragmentManager f = getFragmentManager();
-                FragmentTransaction mtrans = f.beginTransaction();
-                mtrans.commit();
+                String[] TO = {""};
+                String[] CC = {""};
+                Intent emailIntent = new Intent(Intent.ACTION_SEND);
+
+                emailIntent.setData(Uri.parse("mailto:"));
+                emailIntent.setType("text/plain");
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+                emailIntent.putExtra(Intent.EXTRA_CC, CC);
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Your subject");
+                emailIntent.putExtra(Intent.EXTRA_TEXT, "Email message goes here");
+                startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+                finish();
 
             }
         });

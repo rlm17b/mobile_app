@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,9 +37,9 @@ public class SearchActivity extends AppCompatActivity {
                 };
 
                 String mSelectionClause = FoodContentProvider.COLUMN_NAME + " = ? ";
+                Toast.makeText(getApplicationContext(), "Wrong name, try again.", Toast.LENGTH_SHORT).show();
 
-                mCursor = getContentResolver().query(FoodContentProvider.CONTENT_URI, mProjection, mSelectionClause, mSelectionArgs, null);
-                ;
+                // mCursor = getContentResolver().query(FoodContentProvider.CONTENT_URI, mProjection, mSelectionClause, mSelectionArgs, null);
 
             }
 
